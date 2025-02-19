@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xtrafin IT Company</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image: url('./download\ \(29\).jpg'); background-size: cover;">
+<body>
     <header>
-        <div class="container">
-  <img src="./Xtrafin Final Logo 1 png-01.png"height="150"width="150",align="center";>
-            <h1>XTRAFIN FINSERVE PRIVATE LIMITED</h1>
+        <div class="container header-container">
+            <div class="header-logo">
+                <img src="./LOGO.png" alt="Company Logo" class="logo">
+          
+            </div>
             <nav>
                 <ul>
-
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
@@ -25,31 +26,25 @@
 
     <main>
         <section id="home" class="section">
-            <div class="container">
-                <h2>Welcome to XTRAFIN FINSERVE PRIVATE LIMITED</h2>
-                <p>Your partner for innovative and scalable IT services.</p>
-                <a href="#services" class="btn">Explore Our Services</a>
-            </div>
+            
+            <h2>Welcome to XTRAFIN FINSERVE PRIVATE LIMITED</h2>
+            <p>Your partner for innovative and scalable IT services.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
         </section>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Us</h2>
-        <div class="about-container">
-            <div class="about-img-wrapper">
-                <img src="./Xtrafin Final Logo 1 png-01.png" alt="About Us Image" class="about-img">
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <img src="./LOGO.png" alt="About Us Image" class="about-img">
+                    <p>XTRAFIN FINSERVE PRIVATE LIMITED is a premier technology solutions provider specializing in custom IT services. We leverage technical expertise and industry insight to empower businesses in the digital era.</p>
+                </div>
             </div>
-            <div class="about-content">
-                <p>XTRAFIN FINSERVE PRIVATE LIMITED is a premier technology solutions provider specializing in custom IT services. We leverage technical expertise and industry insight to empower businesses in the digital era.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="services" class="section">
             <div class="container">
                 <h2>Our Services</h2>
-                <p>At XTRAFIN FINSERVE PRIVATE LIMITED, we offer a comprehensive range of IT services tailored to your business needs.</p>
                 <div class="services-container">
                     <div class="service-box">
                         <h3>Web Development</h3>
@@ -67,70 +62,45 @@
             </div>
         </section>
 
-    <!-- Crew Members Section -->
-    <section id="crew">
-        <div class="container">
-            <h2 style="color: aliceblue;">Crew Members</h2>
-            <div class="crew-container">
-             
-
-                    <div class="crew-member">
-                        <img src="./mohan" />
-                        <h3>MOHANKUMAR M </h3>
-                        <p>(IT HEAD)</p>
-                    </div>
-                    <div class="crew-member">
-                    <img src="./deepaksir.jpeg" />
-                    <h3>DEEPAK SHIVA T</h3>
-                    <p>(MANAGER)</p>
-                </div>
-                <div class="crew-member">
-                    <img src="./tamil1.jpg" />
-                    <h3>TAMIL MANI K</h3>
-                    <p>(FULL STACK DEVELOPER)</p>
-                </div>
-  <div class="crew-member">
-                    <img src="./rajeev.jpeg">
-                    <h3>RAAJEEV RANJJAN K R</h3>
-                    <p>(FULL STACK DEVELOPER)</p>
-                </div>
-
-
-                <div class="crew-member">
-                    <img src="./rakshith1.jpeg">
-                    <h3>RAKSHITH V S</h3>
-                    <p>(SOFTWARE TESTER)</p>
-                </div>
-       
-            </div>
-        </div>
-    </section>
-
         <section id="contact" class="section">
             <div class="container">
                 <h2>Contact Us</h2>
-                <p>Email: <a href="mailto:XtrafinFinservePrivateLimited@gmail.com">XtrafinFinservePrivateLimited@gmail.com</a></p>
-                <p>Phone: <a href="tel:+917708966610">+91 7708966610</a></p>
-                <form action="#" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Your message"></textarea>
-                    
-                    <button type="submit">Send Message</button>
-                </form>
+                <div class="contact-box">
+                    <p>Email: <a href="mailto:XtrafinFinservePrivateLimited@gmail.com">XtrafinFinservePrivateLimited@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+917708966610">+91 7708966610</a></p>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
+        
+        
+            
+    
+    
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 XTRAFIN FINSERVE PRIVATE LIMITED. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> XTRAFIN FINSERVE PRIVATE LIMITED. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
