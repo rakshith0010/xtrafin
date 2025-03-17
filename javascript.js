@@ -27,3 +27,25 @@ function showPopup() {
 //         popup.remove(); // Remove popup after 2 seconds
 //     }, 2000);
 }
+
+
+ddocument.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("mousemove", createSmoke);
+    document.addEventListener("touchmove", createSmoke); // Fix for mobile
+});
+
+function createSmoke(event) {
+    let x = event.clientX || event.touches[0].clientX;
+    let y = event.clientY || event.touches[0].clientY;
+
+    let smoke = document.createElement("div");
+    smoke.classList.add("smoke");
+    smoke.style.left = `${x}px`;
+    smoke.style.top = `${y}px`;
+
+    document.body.appendChild(smoke);
+
+    setTimeout(() => {
+        smoke.remove();
+    }, 1500); // Increase duration for better visibility
+}
