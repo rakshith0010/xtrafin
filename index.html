@@ -5,16 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xtrafin IT Company</title>
     <link rel="stylesheet" href="style.css">
+ 
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active');
+    }
+
+    // Close menu when a link is clicked
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll("#nav-menu li a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                document.getElementById("nav-menu").classList.remove("active");
+            });
+        });
+    });
+</script>
+
+    <style>
+        /* Mobile Responsive Navigation */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 40px;
+            padding: auto;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #053D54;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 5px 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container header-container">
             <div class="header-logo">
                 <img src="./LOGO.png" alt="Company Logo" class="logo">
-          
             </div>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
@@ -23,6 +83,8 @@
             </nav>
         </div>
     </header>
+</body>
+</html>
 
     <main>
         <section id="home" class="section">
@@ -36,7 +98,7 @@
             <div class="container">
                 <h2>About Us</h2>
                 <div class="about-content">
-                    <img src="./LOGO.png" alt="About Us Image" class="about-img">
+                    <img src="./LOGO.png" alt="About Us Image" class="about-img" height="100"width="200">
                     <p>XTRAFIN FINSERVE PRIVATE LIMITED is a premier technology solutions provider specializing in custom IT services. We leverage technical expertise and industry insight to empower businesses in the digital era.</p>
                 </div>
             </div>
@@ -103,4 +165,4 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
-</html>
+</html>  
