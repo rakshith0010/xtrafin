@@ -21,6 +21,22 @@
             });
         });
     });
+
+// mouse e
+    document.addEventListener("mousemove", function(event) {
+            let smoke = document.createElement("div");
+            smoke.classList.add("smoke");
+            document.body.appendChild(smoke);
+
+            let x = event.clientX;
+            let y = event.clientY;
+            smoke.style.left = `${x}px`;
+            smoke.style.top = `${y}px`;
+
+            setTimeout(() => {
+                smoke.remove();
+            }, 1000);
+        });
 </script>
 
     <style>
@@ -45,7 +61,7 @@
 
             nav ul {
                 display: none;
-                flex-direction: column;
+                flex-direction: column; 
                 position: absolute;
                 top: 60px;
                 right: 0;
