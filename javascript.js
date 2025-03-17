@@ -29,23 +29,62 @@ function showPopup() {
 }
 
 
-ddocument.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("mousemove", createSmoke);
-    document.addEventListener("touchmove", createSmoke); // Fix for mobile
+// document.addEventListener("DOMContentLoaded", function () {
+//     document.addEventListener("mousemove", createSmoke);
+//     document.addEventListener("touchmove", createSmoke); // Fix for mobile
+// });
+
+// function createSmoke(event) {
+//     let x = event.clientX || event.touches[0].clientX;
+//     let y = event.clientY || event.touches[0].clientY;
+
+//     let smoke = document.createElement("div");
+//     smoke.classList.add("smoke");
+//     smoke.style.left = `${x}px`;
+//     smoke.style.top = `${y}px`;
+
+//     document.body.appendChild(smoke);
+
+//     setTimeout(() => {
+//         smoke.remove();
+//     }, 1500); // Increase duration for better visibility
+// }
+document.addEventListener("DOMContentLoaded", function () {
+    let currentColor = getRandomColor(); // Initial smoke color
+
+    // Change smoke color every 3 seconds
+    setInterval(() => {
+        currentColor = getRandomColor();
+    }, 3000);
+
+    // Mouse move event (desktop)
+    document.addEventListener("mousemove", function (event) {
+        createSmoke(event.clientX, event.clientY);
+    });
+
+    // Touch move event (mobile)
+    document.addEventListener("touchmove", function (event) {
+        let touch = event.touches[0];
+        createSmoke(touch.clientX, touch.clientY);
+    }, { passive: false });
+
+    function createSmoke(x, y) {
+        let smoke = document.createElement("div");
+        smoke.classList.add("smoke");
+        smoke.style.left = `${x}px`;
+        smoke.style.top = `${y}px`;
+        smoke.style.background = currentColor;
+
+        document.body.appendChild(smoke);
+
+        setTimeout(() => {
+            smoke.remove();
+        }, 1500);
+    }
+
+    function getRandomColor() {
+        const colors = ["rgba(255, 69, 0, 0.7)", "rgba(0, 191, 255, 0.7)", "rgba(50, 205, 50, 0.7)", 
+                        "rgba(255, 20, 147, 0.7)", "rgba(255, 255, 0, 0.7)", "rgba(75, 0, 130, 0.7)"];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
 });
-
-function createSmoke(event) {
-    let x = event.clientX || event.touches[0].clientX;
-    let y = event.clientY || event.touches[0].clientY;
-
-    let smoke = document.createElement("div");
-    smoke.classList.add("smoke");
-    smoke.style.left = `${x}px`;
-    smoke.style.top = `${y}px`;
-
-    document.body.appendChild(smoke);
-
-    setTimeout(() => {
-        smoke.remove();
-    }, 1500); // Increase duration for better visibility
-}
