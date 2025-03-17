@@ -266,3 +266,65 @@ footer {
         padding: 2px;
     }
 }
+
+
+/* Background */
+#home {
+    background-color: #000;
+    color: #eeecec;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smoke effect */
+.smoke {
+    position: absolute;
+    width: min(3vw, 20px);  /* Responsive width */
+    height: min(3vw, 20px); /* Responsive height */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    pointer-events: none;
+    animation: smoke-rise 1s linear forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .smoke {
+        width: min(2.5vw, 15px);
+        height: min(2.5vw, 15px);
+        animation-duration: 0.8s;
+    }
+}
+
+@media (max-width: 768px) {
+    .smoke {
+        width: min(2vw, 12px);
+        height: min(2vw, 12px);
+        animation-duration: 0.7s;
+    }
+}
+
+@media (max-width: 480px) {
+    .smoke {
+        width: min(1.5vw, 10px);
+        height: min(1.5vw, 10px);
+        animation-duration: 0.6s;
+    }
+}
+
+/* Smoke rising effect */
+@keyframes smoke-rise {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10vh) scale(2);
+    }
+}
